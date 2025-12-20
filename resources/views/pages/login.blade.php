@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <img src="{{asset('images/nmk.webp')}}" alt="nmk icon" class="icon">
+
 
         <section class="form">
 

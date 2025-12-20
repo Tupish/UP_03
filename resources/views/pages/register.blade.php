@@ -6,17 +6,26 @@
 
         <section class="form">
 
-            <h2 class="title">Регистрация</h2>
-            <form method="POST" action="{{route('login')}}">
+            <h3 class="title">Регистрация</h3>
+            <form method="POST" action="{{route('login')}}" id="register">
                 @csrf
 
                 <label for="email">Почта</label>
-                <input type="email" class="input" name="email" placeholder="Введите почту" required>
+                <input type="email" class="input" name="email" placeholder="exaple@mail.ru" required>
 
                 <label for="password">Пароль</label>
-                <input type="password" class="input" name="password" placeholder="Введите пароль" required>
+                <input type="password" class="input" name="password" placeholder="Пароль" required>
 
+                <label for="role">Роль</label>
+                <select name="role" id="role" default="">
+                    <option value="student">Студент</option>
+                    <option value="teacher" selected>Преподаватель</option>
+                </select>
 
+                <div id="group">
+                    <label for="group">Группа</label>
+                    <input name="group" required placeholder="is122" class="input">
+                </div>
 
 
                 <button type="submit" class="but">Зарегестрироваться</button>

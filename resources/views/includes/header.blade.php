@@ -1,10 +1,14 @@
+<div class="container">
+    <img src="{{asset('images/nmk.webp')}}" alt="nmk icon" class="icon">
+    <nav>
+        <a href="{{route('main')}}">Главная</a>
+
+        <a href="{{route('login')}}">Вход</a>
+        <a href="{{route('register')}}">Регистрация</a>
+    </nav>
+</div>
 
 
-<p>☎️(34783)-5-00-76</p>
-
-<p>🕒Пн-Пт 8:30-17:30</p>
-
-<p>✉️post@nmknf.ru</p>
 
 
 
