@@ -3,12 +3,78 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --black-color: #2f2f2f;
+    --gray-color: #aaaaaa;
+    --blue-color:#4d4dfd;
+    --light-color:#ffffff;
+
+    --width: 800px
+}
 html{
     font-family: sans-serif;
+    font-size: 15px;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 header{
     max-height: 100px;
-    background-color: blue;
+    background-color: var(--blue-color);
+    color: var(--gray-color);
+    padding: 15px;
+    display: flex;
+}
+header > p{
+    margin: 0 1.5rem ;
+}
+.form{
+    color:var(--black-color);
+    margin: 1.3rem;
+    background-color: #efefef;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: var(--width);
+    box-shadow: 0 10px 30px #0402024C;
+}
+
+.title{
+    color: var(--black-color);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+input{
+    color: var(--black-color);
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    margin-bottom: 1.2rem;
+}
+input::placeholder{
+    color: var(--gray-color);
+}
+.but{
+    background-color: var(--blue-color);
+    color: var(--light-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    width: 100%;
+}
+.other{
+    margin-top: 20px;
+    text-align: center;
+}
+a{
+    color: var(--black-color);
 }
 .icon{
     max-height: 100px;
