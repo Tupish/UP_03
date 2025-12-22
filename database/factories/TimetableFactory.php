@@ -25,7 +25,7 @@ class TimetableFactory extends Factory
             'room'=>fake()->bothify('###'),
             'group_id'=>Group::query()->inRandomOrder()->first()->group_id ?? 1,
             'subject_id'=>Subject::query()->inRandomOrder()->first()->subject_id ?? 1,
-            'teacher_id'=>Teacher::query()->inRandomOrder()->first()->teache_id ?? 1,
+            'teacher_id'=>Teacher::query()->inRandomOrder()->first()->teacher_id ?? 1,
         ];
     }
 }

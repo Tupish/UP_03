@@ -2,7 +2,7 @@
 @section('title','Регистрация')
 @section('content')
     <div class="container">
-        <img src="{{asset('images/nmk.webp')}}" alt="nmk icon" class="icon">
+
 
         <section class="form">
 
@@ -15,6 +15,14 @@
 
                 <label for="password">Пароль</label>
                 <input type="password" class="input" name="password" placeholder="Пароль" required>
+
+                <label for="password">Имя</label>
+                <input type="text" class="input" name="first_name" placeholder="Иван" required>
+
+                <label for="password">Фамилия</label>
+                <input type="text" class="input" name="last_name" placeholder="Иванов" required>
+
+
 
                 <label for="role">Роль</label>
                 <select name="role" id="role" default="">

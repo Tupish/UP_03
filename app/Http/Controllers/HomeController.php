@@ -15,4 +15,7 @@ class HomeController extends Controller
     public function showRegister(){
         return view('pages.register');
     }
+    public function showProfile(){
+        return view('pages.profile');
+    }
 }
