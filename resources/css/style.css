@@ -9,7 +9,7 @@
     --gray-color: #aaaaaa;
     --blue-color:#4d4dfd;
     --light-color:#ffffff;
-
+    --red-color: #ff0000;
     --width: 800px
 }
 
@@ -24,13 +24,18 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-
+main{
+    flex: 1 0 auto;
+    min-height: 700px;
+}
 .container{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+
+/*шапка*/
 header, footer{
     background-color: var(--blue-color);
     color: var(--light-color); /* Сделал светлым для лучшей читаемости */
@@ -49,30 +54,33 @@ header a{
     margin: 10px;
     font-size: 1.2rem;
 }
+
+
+/*подвал*/
 footer {
     margin-top: auto;
     padding: 40px 0;
 }
 
-.footer-container {
+.footer-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: start;
 }
 
-.footer-container h3 {
+.footer-container h3{
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
     color: var(--light-color);
 }
 
-.footer-container p {
+.footer-container p{
     margin-bottom: 10px;
     opacity: 0.9;
 }
 
-.footer-container a {
+.footer-container a{
     display: block;
     color: var(--light-color);
     text-decoration: none;
@@ -80,20 +88,20 @@ footer {
     transition: 0.3s;
 }
 
-.footer-container a:hover {
-    opacity: 1;
-    transform: translateY(-5px);
+.footer-container a:hover{
+    color: var(--gray-color);
 }
 
 nav{
     display: flex;
     align-items: center;
 }
-
-main{
-    flex: 1 0 auto;
+nav a:hover{
+    color: var(--gray-color);
 }
 
+
+/*формы*/
 .form{
     color:var(--black-color);
     margin: 1.3rem auto;
@@ -137,6 +145,9 @@ input::placeholder{
     width: 100%;
     cursor: pointer;
 }
+.but:hover{
+    transform: translateY(-5px);
+}
 
 .other{
     margin-top: 20px;
@@ -154,7 +165,7 @@ a{
     display: block;
 }
 
-#group{
+#group #grade{
     display: none;
 }
 
@@ -277,6 +288,92 @@ section .title{
     font-size: 1.1rem;
 }
 
+
+/*профиль*/
+.profile {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.profile-side {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--gray-color);
+    text-align: center;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+
+    border: 2px solid var(--gray-color);
+}
+.role{
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #eef2ff;
+    color: var(--blue-color);
+    border-radius: 20px;
+    margin: 15px 0;
+}
+.but-exit {
+    background-color: var(--red-color);
+}
+
+.profile-info{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card{
+    background: var(--light-color);
+    padding: 20px;
+    border-radius: 15px;
+
+}
+
+.info-card h3 {
+    color: var(--blue-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.info p{
+    color: var(--gray-color);
+}
+.marks{
+    grid-column: 2;
+}
+
+
+/*таблица оценок*/
+table{
+    width: 100%;
+    text-align: center;
+}
+
+th{
+    padding: 12px;
+    border-bottom: 2px solid var(--blue-color);
+    color: var(--black-color);
+}
+
+td{
+    padding: 12px;
+    border-bottom: 1px solid var(--black-color);
+    color: var(--black-color);
+}
 
 @media (max-width: 768px) {
     .footer-container {

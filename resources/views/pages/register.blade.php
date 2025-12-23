@@ -7,7 +7,7 @@
         <section class="form">
 
             <h3 class="title">Регистрация</h3>
-            <form method="POST" action="{{route('login')}}" id="register">
+            <form method="POST" action="{{route('register')}}" id="register">
                 @csrf
 
                 <label for="email">Почта</label>
@@ -22,13 +22,16 @@
                 <label for="password">Фамилия</label>
                 <input type="text" class="input" name="last_name" placeholder="Иванов" required>
 
-
-
                 <label for="role">Роль</label>
                 <select name="role" id="role" default="">
-                    <option value="student">Студент</option>
-                    <option value="teacher" selected>Преподаватель</option>
+                    <option value="1" selected>Студент</option>
+                    <option value="2">Преподаватель</option>
                 </select>
+
+                <div id="grade">
+                    <label for="grade">Номер зачетной книжки</label>
+                    <input name="grade" required placeholder="123456" class="input">
+                </div>
 
                 <div id="group">
                     <label for="group">Группа</label>
