@@ -21,10 +21,12 @@ class MarkFactory extends Factory
     {
         return [
             'value'=>fake()->numberBetween(2,5),
-            'date'=>fake()->date(),
+            'control_type' =>fake()->randomElement(['Экзамен','Зачет','Тест','Контрольная работа']),
+            'date'=>fake()->dateTimeBetween('-1 year', 'now'),
+            'teacher_id'=>Teacher::query()->inRandomOrder()->first()->teacher_id ?? 1,
             'student_id'=>Student::query()->inRandomOrder()->first()->student_id ?? 1,
             'subject_id'=>Subject::query()->inRandomOrder()->first()->subject_id ?? 1,
-            'teacher_id'=>Teacher::query()->inRandomOrder()->first()->teache_id ?? 1,
+
         ];
     }
 }

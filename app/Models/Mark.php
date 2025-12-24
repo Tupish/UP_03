@@ -13,7 +13,7 @@ class Mark extends Model
     use HasFactory,SoftDeletes;
 
     protected $primaryKey = 'mark_id';
-    protected $fillable = ['value','date','teacher_id','student_id','subject_id'];
+    protected $fillable = ['value','control_type','date','teacher_id','student_id','subject_id'];
 
     public function student(): BelongsTo
     {
@@ -25,6 +25,7 @@ class Mark extends Model
     }
     public function subject(): BelongsTo
     {
-        return $this->belongsTo(Student::class,'subject_id');
+        return $this->belongsTo(Subject::class,'subject_id');
     }
+
 }

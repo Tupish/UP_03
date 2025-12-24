@@ -6,8 +6,8 @@
 
             <section class="profile-side">
                 <img src="{{asset('images/user.png')}}" class="avatar" alt="user">
-                <h2 class="user-name">Иван Иванов</h2>
-                <p class="role">Студент</p>
+                <h2 class="user-name">...</h2>
+                <p class="role">...</p>
 
 
                     <form action="#" method="POST">
@@ -22,15 +22,15 @@
                     <h3>Личные данные</h3>
                     <div class="info">
                         <p>Имя:</p>
-                        <p>Иван</p>
+                        <p id="first-name">...</p>
                     </div>
                     <div class="info">
                         <p>Фамилия:</p>
-                        <p>Иванов</p>
+                        <p id="last-name">...</p>
                     </div>
                     <div class="info">
                         <p>Номер зачетки:</p>
-                        <p>#123456</p>
+                        <p id="grade-book">...</p>
                     </div>
                 </div>
 
@@ -38,11 +38,11 @@
                     <h3>Учебная информация</h3>
                     <div class="info">
                         <p>Группа:</p>
-                        <p>ИС-151</p>
+                        <p id="group">...</p>
                     </div>
                     <div class="info">
                         <p>Отделение:</p>
-                        <p>Информационные технологии</p>
+                        <p id="department">...</p>
                     </div>
                 </div>
 
@@ -50,11 +50,11 @@
                     <h3>Данные аккаунта</h3>
                     <div class="info">
                         <p>Создан:</p>
-                        <p>20.10.2023</p>
+                        <p id="create">...</p>
                     </div>
                     <div class="info">
                         <p>Обновлен:</p>
-                        <p>Сегодня</p>
+                        <p id="update">...</p>
                     </div>
                 </div>
 
@@ -72,16 +72,15 @@
                             <th>Оценка</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="marks-table">
                         <tr>
-                            <td>МДК 03.01</td>
-                            <td>Практическая работа</td>
-                            <td>14.12.2025</td>
-                            <td>5</td>
+                            <td colspan="4">Загрузка...</td>
                         </tr>
                         </tbody>
                     </table>
+                <div id="pagination"></div>
             </div>
         </section>
     </div>
 @endsection
+

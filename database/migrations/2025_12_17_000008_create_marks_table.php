@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('marks', function (Blueprint $table) {
             $table->id('mark_id');
             $table->string('value');
+            $table->string('control_type', 50);
             $table->date('date');
-            $table->foreignId('teacher_id')->constrained('teachers','teacher_id');
-            $table->foreignId('student_id')->constrained('students','student_id');
-            $table->foreignId('subject_id')->constrained('subjects','subject_id');
+            $table->foreignId('teacher_id')->constrained('teachers', 'teacher_id');
+            $table->foreignId('student_id')->constrained('students', 'student_id');
+            $table->foreignId('subject_id')->constrained('subjects', 'subject_id');
             $table->timestamps();
             $table->softDeletes();
         });
