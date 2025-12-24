@@ -23,5 +23,6 @@
 </footer>
 </body>
 @vite('resources/js/script.js')
+@vite('resources/js/auth.js')
 @vite('resources/js/student.js')
 </html>
