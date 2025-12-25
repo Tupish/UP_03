@@ -19,8 +19,6 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name'=>fake()->firstName(),
-            'last_name'=>fake()->lastName(),
             'grade_book'=>fake()-> bothify('#####'),
             'group_id'=>Group::query()->inRandomOrder()->first()->group_id ?? 1,
             'department_id'=>Department::query()->inRandomOrder()->first()->department_id ?? 1,

@@ -14,7 +14,7 @@ class Student extends Model
     use HasFactory, SoftDeletes;
 
     protected $primaryKey = 'student_id';
-    protected $fillable = ['first_name','last_name','group_id','department_id'];
+    protected $fillable = ['grade_book','group_id','department_id'];
 
     public function group(): BelongsTo
     {

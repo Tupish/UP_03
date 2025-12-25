@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id('student_id');
-            $table->string('first_name',45);
-            $table->string('last_name',45);
             $table->string('grade_book', 5)->unique();
             $table->foreignId('group_id')->constrained('groups','group_id');
             $table->foreignId('department_id')->constrained('departments','department_id');
