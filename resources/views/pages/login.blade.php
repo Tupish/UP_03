@@ -8,7 +8,7 @@
         <section class="form">
 
             <h2 class="title">Вход в аккаунт</h2>
-            <form method="POST" action="{{route('view.login')}}">
+            <form method="POST">
                 @csrf
 
                 <label for="email">Почта</label>
@@ -20,7 +20,7 @@
                 <button type="submit" class="but">Войти</button>
             </form>
             <div class="other">
-                <p>Нет аккаунта? <a href="{{route('view.register')}}">Регистрация</a></p>
+                <p>Нет аккаунта? <a href="{{route('register_web')}}">Регистрация</a></p>
             </div>
         </section>
     </div>

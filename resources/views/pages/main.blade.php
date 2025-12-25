@@ -6,7 +6,7 @@
 
         <h1 class="hero-title">Мониторинг качества образования</h1>
         <p>Профессиональный инструмент для анализа успеваемости и управления учебными данными.</p>
-        <a href="{{route('view.login')}}" class="hero-but">Начать работу</a>
+        <a href="{{route('login_web')}}" class="hero-but">Начать работу</a>
 
     </section>
 

@@ -7,7 +7,7 @@
         <section class="form">
 
             <h3 class="title">Регистрация</h3>
-            <form method="POST" action="{{route('view.register')}}" id="register-form">
+            <form method="POST"  id="register-form">
                 @csrf
 
                 <label for="email">Почта</label>
@@ -42,34 +42,11 @@
                 <button type="submit" class="but">Зарегестрироваться</button>
             </form>
             <div class="other">
-                <p>Есть аккаунт? <a href="{{route('view.login')}}">Войти</a></p>
+                <p>Есть аккаунт? <a href="{{route('login_web')}}">Войти</a></p>
             </div>
 
         </section>
     </div>
 @endsection
 
-<script>
-    id('register-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
 
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData.entries());
-
-        const response = await fetch('/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector(`meta[name="csrf-token"]`).content
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            window.location.href = '/profile';
-        } else {
-            alert('Ошибка при регистрации');
-        }
-    });
-</script>

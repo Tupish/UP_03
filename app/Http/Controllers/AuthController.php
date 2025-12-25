@@ -41,7 +41,6 @@ class AuthController extends Controller
             ]);
         }
 
-
         Auth::login($user);
         return response()->json(['message' => 'Успешная регистрация', 'user' => $user]);
     }
@@ -71,7 +70,6 @@ class AuthController extends Controller
 
     public function profile()
     {
-
         return response()->json(User::with('student')->find(Auth::id()));
     }
 

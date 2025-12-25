@@ -4,26 +4,26 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    try {
-        const response = await fetch('/api/registration', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
 
-        const result = await response.json();
+    const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || ''
+        },
+        body: JSON.stringify(data)
+    });
 
-        if (response.ok) {
+    const result = await response.json();
+
+    if (response.ok) {
+        if (result.access_token) {
             localStorage.setItem('bearer_token', result.access_token);
-            alert('Регистрация успешна!');
-            window.location.href = '/profile';
-        } else {
-            alert('Ошибка: ' + (result.message));
         }
-    } catch (error) {
-        console.error('Ошибка сети:', error);
+        alert('Регистрация успешна!');
+        window.location.href = '/profile';
+    } else {
+        alert('Ошибка: ' + (result.message || 'Неизвестная ошибка'));
     }
 });

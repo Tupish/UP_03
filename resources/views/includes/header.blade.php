@@ -3,8 +3,8 @@
     <nav>
         <a href="{{route('main')}}">Главная</a>
         <a href="{{route('profile')}}">Профиль</a>
-        <a href="{{route('view.login')}}">Вход</a>
-        <a href="{{route('view.register')}}">Регистрация</a>
+        <a href="{{route('login_web')}}">Вход</a>
+        <a href="{{route('register_web')}}">Регистрация</a>
     </nav>
 </div>
 

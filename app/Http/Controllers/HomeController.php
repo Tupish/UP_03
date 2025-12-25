@@ -31,41 +31,6 @@ class HomeController extends Controller
     public function showRegister(){
         return view('pages.register');
     }
-    public function register(Request $request)
-    {
-        $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role_id' => $request->role,
-        ]);
 
-
-        if ($user->role_id == 1) {
-            Student::create([
-                'user_id' => $user->id,
-                'grade_book' => $request->grade,
-            ]);
-        } elseif ($user->role_id == 2) {
-            Teacher::create([
-                'user_id' => $user->id,
-            ]);
-        }
-
-        auth()->login($user);
-
-        return redirect('/profile');
-    }
-    public function login(Request $request)
-    {
-        if (Auth::attempt([
-            'email'=>$request->email,
-            'password'=>$request->password,
-        ])) {
-            $request->session()->regenerate();
-            return redirect('/profile');
-        }
-    }
 }
 
