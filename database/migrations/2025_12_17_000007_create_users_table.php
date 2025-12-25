@@ -15,12 +15,10 @@ return new class extends Migration
             $table->id('user_id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('grade_book')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('role_id')->constrained('roles','role_id');
-
             $table->foreignId('student_id')->nullable()->constrained('students','student_id');
             $table->foreignId('teacher_id')->nullable()->constrained('teachers','teacher_id');
             $table->rememberToken();

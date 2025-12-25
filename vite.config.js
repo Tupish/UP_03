@@ -8,7 +8,7 @@ export default defineConfig({
             input: ['resources/css/style.css',
                 'resources/js/script.js',
                 'resources/js/student.js',
-                'resources/js/auth.js'],
+                'resources/js/login.js'],
             refresh: true,
         }),
         viteStaticCopy({

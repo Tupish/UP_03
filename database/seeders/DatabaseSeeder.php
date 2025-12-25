@@ -24,11 +24,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Role::factory()->count(3)->state(new Sequence(
-            ['role_name'=>'student'],
-            ['role_name'=>'teacher'],
-            ['role_name'=>'admin'],
-        ))->create();
+        Role::factory()->count(2)->standartRoles()->create();
         Group::factory(10)->create();
         Department::factory(5)->create();
         Teacher::factory(15)->create();
