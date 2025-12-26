@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -21,7 +22,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'user';
     protected $fillable = [
         'first_name',
         'last_name',
@@ -62,7 +63,7 @@ class User extends Authenticatable
     }
     public function student(): HasOne
     {
-        return $this->hasOne(Student::class, 'user_id');
+        return $this->hasOne(Student::class, 'id');
     }
     public function teacher(): BelongsTo
     {

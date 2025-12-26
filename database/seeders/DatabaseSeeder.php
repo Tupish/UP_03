@@ -24,14 +24,36 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
         Role::factory()->count(2)->standartRoles()->create();
         Group::factory(10)->create();
         Department::factory(5)->create();
-        Teacher::factory(15)->create();
+
+
+        User::factory(15)->create(['role_id' => 2])->each(function ($user) {
+            Teacher::create([
+                'id' => $user->id
+            ]);
+        });
+
+
         Subject::factory(20)->create();
-        Student::factory(100)->create();
+
+
+        User::factory(100)->create(['role_id' => 1])->each(function ($user) {
+
+            $group = Group::inRandomOrder()->first();
+            $dept = Department::inRandomOrder()->first();
+
+            Student::create([
+                'id' => $user->id,
+                'grade_book' => fake()->unique()->numberBetween(10000, 99999),
+                'group_id' => $group->id ?? $group->group_id,
+                'department_id' => $dept->id ?? $dept->department_id,
+            ]);
+        });
+
         Timetable::factory(50)->create();
         Mark::factory(400)->create();
-        User::factory(115)->create();
     }
 }
