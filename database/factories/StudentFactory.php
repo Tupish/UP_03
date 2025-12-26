@@ -19,9 +19,7 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'grade_book'=>fake()->unique()->bothify('#####'),
-            'group_id'=>Group::query()->inRandomOrder()->first()->group_id ?? 1,
-            'department_id'=>Department::query()->inRandomOrder()->first()->department_id ?? 1,
+
         ];
     }
 }
