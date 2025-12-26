@@ -91,3 +91,4 @@
         });
     </script>
 @endsection
+@vite('resources/js/student.js')

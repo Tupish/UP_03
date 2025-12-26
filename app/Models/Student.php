@@ -10,24 +10,29 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
-    /** @use HasFactory<\Database\Factories\StudentFactory> */
     use HasFactory, SoftDeletes;
 
     protected $primaryKey = 'student_id';
-    protected $fillable = ['user_id','grade_book','group_id','department_id'];
+    protected $fillable = ['user_id', 'grade_book', 'group_id', 'department_id'];
+    protected $with = ['group', 'department'];
 
     public function group(): BelongsTo
     {
-        return $this->belongsTo(Group::class,'group_id');
+        return $this->belongsTo(Group::class, 'group_id', 'group_id');
     }
+
     public function department(): BelongsTo
     {
-        return $this->belongsTo(Department::class,'department_id');
+        return $this->belongsTo(Department::class, 'department_id', 'department_id');
     }
-    public function mark(): HasMany{
-        return $this->hasMany(Student::class,'student_id');
+
+    public function marks(): HasMany
+    {
+        return $this->hasMany(Mark::class, 'student_id', 'student_id');
     }
-    public function user(): BelongsTo{
-        return $this->belongsTo(User::class,'id');
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

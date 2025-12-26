@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
-
     @vite('resources/css/style.css')
 </head>
 <body>
@@ -23,7 +22,4 @@
     @include('includes.footer')
 </footer>
 </body>
-@vite('resources/js/script.js')
-@vite('resources/js/login.js')
-@vite('resources/js/student.js')
 </html>

@@ -47,12 +47,24 @@ class AuthController extends Controller
 
 
         if ($user->role_id === 1) {
-            $user->load(['student.group', 'student.department', 'student.marks.subject']);
+
+            $user->load([
+                'student.group',
+                'student.department',
+                'student.marks' => function($query) {
+                    $query->with([
+                        'subject',
+                        'teacher.user'
+                    ])->orderBy('date', 'desc')->limit(50);
+                }
+            ]);
+        } elseif ($user->role_id === 2) {
+
+            $user->load([
+                'teacher',
+            ]);
         }
 
-        else if ($user->role_id === 2) {
-            $user->load('teacher');
-        }
         return response()->json($user);
     }
 }
